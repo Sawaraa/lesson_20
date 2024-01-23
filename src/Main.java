@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException{
 
         //Thread
         MyThread myThread = new MyThread();
@@ -10,5 +10,7 @@ public class Main {
         Runnable runnable = new RunnableThread();
         Thread thread = new Thread(runnable);
         thread.start();
+        myThread.join();
+        thread.join();
     }
 }
